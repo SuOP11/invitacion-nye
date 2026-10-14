@@ -13,7 +13,6 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Contenedor principal relativo para posicionar los botones encima */
         .invitacion-container {
             position: relative;
             width: 100%;
@@ -42,49 +41,49 @@
         /* ESTILO GENERAL DE LOS BOTONES INVISIBLES */
         .boton-invisible {
             position: absolute;
-            background-color: rgba(255, 0, 0, 0); /* Totalmente transparente */
             cursor: pointer;
             display: block;
-            /* Descomenta la línea de abajo si quieres verlos en color rojo para pruebas */
-            /* background-color: rgba(255, 0, 0, 0.3); */ 
+            /* NOTA: Están en rojo transparente (0.4) para que veas dónde caen en tu pantalla. */
+            /* Cuando queden perfectos, cambia el 0.4 de abajo por 0 para hacerlos invisibles */
+            background-color: rgba(255, 0, 0, 0.4); 
         }
 
-        /* POSICIONAMIENTO EXACTO DE CADA BOTÓN (En porcentajes) */
-        .btn-ubicacion { top: 38%; left: 8%; width: 84%; height: 5%; }
-        .btn-regalos { top: 76.5%; left: 6%; width: 88%; height: 11.5%; }
-        .btn-novio { top: 92%; left: 16%; width: 31%; height: 3.5%; }
-        .btn-novia { top: 92%; left: 52%; width: 31%; height: 3.5%; }
-        .btn-hospedaje { top: 96.5%; left: 15%; width: 70%; height: 3.5%; }
+        /* AJUSTA ESTOS PORCENTAJES SI SE ADELANTAN O ATRASAN EN TU IMAGEN */
+        .btn-ubicacion { top: 38.2%; left: 8%; width: 84%; height: 2.2%; }
+        .btn-regalos   { top: 76.8%; left: 6%; width: 88%; height: 6.8%; }
+        .btn-novio     { top: 92.5%; left: 15%; width: 32%; height: 1.8%; }
+        .btn-novia     { top: 92.5%; left: 53%; width: 32%; height: 1.8%; }
+        .btn-hospedaje { top: 95.8%; left: 15%; width: 70%; height: 1.8%; }
     </style>
 </head>
 <body>
 
     <div class="invitacion-container">
 
-        <!-- 1. VIDEO MP4 (Se reproduce una sola vez y queda fijo) -->
+        <!-- 1. VIDEO MP4 (Se reproduce una vez y queda fijo) -->
         <video autoplay muted playsinline>
             <source src="video.mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
 
-        <!-- 2. CONTENEDOR DE LA IMAGEN Y SUS BOTONES -->
+        <!-- 2. CONTENEDOR DE LA IMAGEN CON LOS BOTONES ENLAZADOS -->
         <div class="wrapper-imagen">
             <img src="invitacion.png" alt="Invitación">
 
-            <!-- BOTÓN 1: UBICACIÓN QUINTA SANTA MARÍA -->
+            <!-- BOTÓN 1: UBICACIÓN -->
             <a href="https://google.com" target="_blank" class="boton-invisible btn-ubicacion" title="Ver Ubicación"></a>
 
-            <!-- BOTÓN 2: MESA DE REGALOS LIVERPOOL -->
+            <!-- BOTÓN 2: MESA DE REGALOS -->
             <a href="https://liverpool.com.mx" target="_blank" class="boton-invisible btn-regalos" title="Mesa de Regalos"></a>
 
             <!-- BOTÓN 3: CONFIRMAR NOVIO -->
-            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novio" title="Confirmar con Novio"></a>
+            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novio" title="Confirmar con Emilio"></a>
 
             <!-- BOTÓN 4: CONFIRMAR NOVIA -->
-            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novia" title="Confirmar con Novia"></a>
+            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novia" title="Confirmar con Nayeli"></a>
 
-            <!-- BOTÓN 5: HOSPEDAJE AIRBNB -->
-            <a href="https://airbnb.mx" target="_blank" class="boton-invisible btn-hospedaje" title="Ver Opciones de Hospedaje"></a>
+            <!-- BOTÓN 5: HOSPEDAJE -->
+            <a href="https://airbnb.mx" target="_blank" class="boton-invisible btn-hospedaje" title="Ver Hospedaje"></a>
         </div>
 
     </div>
