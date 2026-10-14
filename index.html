@@ -7,15 +7,17 @@
     <style>
         body { 
             text-align: center; 
-            background-color: #eae6e1; /* Fondo beige elegante */
+            background-color: #eae6e1; 
             margin: 0; 
             padding: 0; 
             font-family: Arial, sans-serif;
         }
 
+        /* Contenedor principal relativo para posicionar los botones encima */
         .invitacion-container {
+            position: relative;
             width: 100%;
-            max-width: 450px; /* Ancho ideal para celulares */
+            max-width: 450px; 
             margin: 0 auto;
             background-color: #ffffff;
             box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
@@ -26,45 +28,64 @@
             display: block;
         }
 
+        .wrapper-imagen {
+            position: relative;
+            width: 100%;
+        }
+
         img {
             width: 100%;
             height: auto;
             display: block;
         }
+
+        /* ESTILO GENERAL DE LOS BOTONES INVISIBLES */
+        .boton-invisible {
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0); /* Totalmente transparente */
+            cursor: pointer;
+            display: block;
+            /* Descomenta la línea de abajo si quieres verlos en color rojo para pruebas */
+            /* background-color: rgba(255, 0, 0, 0.3); */ 
+        }
+
+        /* POSICIONAMIENTO EXACTO DE CADA BOTÓN (En porcentajes) */
+        .btn-ubicacion { top: 38%; left: 8%; width: 84%; height: 5%; }
+        .btn-regalos { top: 76.5%; left: 6%; width: 88%; height: 11.5%; }
+        .btn-novio { top: 92%; left: 16%; width: 31%; height: 3.5%; }
+        .btn-novia { top: 92%; left: 52%; width: 31%; height: 3.5%; }
+        .btn-hospedaje { top: 96.5%; left: 15%; width: 70%; height: 3.5%; }
     </style>
 </head>
 <body>
 
     <div class="invitacion-container">
 
-        <!-- 1. VIDEO DE LA APERTURA DEL SOBRE -->
-        <video autoplay loop muted playsinline>
+        <!-- 1. VIDEO MP4 (Se reproduce una sola vez y queda fijo) -->
+        <video autoplay muted playsinline>
             <source src="video.mp4" type="video/mp4">
             Tu navegador no soporta videos.
         </video>
 
-        <!-- 2. IMAGEN DE LA INVITACIÓN COMPLETA -->
-        <img src="invitacion.png" usemap="#image-map">
+        <!-- 2. CONTENEDOR DE LA IMAGEN Y SUS BOTONES -->
+        <div class="wrapper-imagen">
+            <img src="invitacion.png" alt="Invitación">
 
-        <!-- 3. MAPEO DE LOS 5 BOTONES EN SUS RESPECTIVAS SECCIONES DELIMITADAS -->
-        <map name="image-map">
-            
-            <!-- BOTÓN 1: QUINTA SANTA MARÍA (VER UBICACIÓN) -->
-            <area target="_blank" alt="Ver Ubicación" title="Ver Ubicación" href="https://www.google.com/maps/place/Quinta+Santa+María,+Cam.+ál+Monasterio+9,+Santa+María+Ahuacatitlán,+62100+Cuernavaca,+Mor./data=!4m2!3m1!1s0x85cde1549d3f5e3d:0xd7a72fd0c501afb4!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI2LjMzLjIYACCIJyqpASw5NDI2NzcyNyw5NDI5MjE5NSw5NDI5OTUzMiwxMDA3OTY0OTgsMTAwNzk3NzYxLDEwMDc5NjUzNSw5NDI4MDU3Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxODY1Myw5NDIyOTgzOSw5NDI3NTE2OCw5NDI3OTYxOSwxMDA4MTU2NDAsMTAwODIwMjM3LDEwMDgyMjQ5NCwxMDA4Mjc5NzFCAk1Y&skid=e4d728df-c2cb-41f8-b0a2-f1a77afad88f&g_st=aw" coords="40,372,410,412" shape="rect">
-            
-            <!-- BOTÓN 2: MESA DE REGALOS (LIVERPOOL NAYEMI BODA) -->
-            <area target="_blank" alt="Mesa de Regalos" title="Ir a Mesa de Regalos" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60045734" coords="30,735,420,845" shape="rect">
-            
-            <!-- BOTÓN 3: CONFIRMAR NOVIO (EMILIO) -->
-            <area target="_blank" alt="Confirmar con Novio" title="Confirmar con el Novio" href="https://wa.me/525548446515" coords="80,885,215,915" shape="rect">
-            
-            <!-- BOTÓN 4: CONFIRMAR NOVIA (NAYELI) -->
-            <area target="_blank" alt="Confirmar con Novia" title="Confirmar con la Novia" href="https://wa.me/525562060868" coords="235,885,370,915" shape="rect">
-            
-            <!-- BOTÓN 5: OPCIONES DE HOSPEDAJE (AIRBNB WISHLIST) -->
-            <area target="_blank" alt="Opciones de Hospedaje" title="Ver Opciones de Hospedaje" href="https://www.airbnb.mx/wishlists/2210473772" coords="70,928,380,958" shape="rect">
+            <!-- BOTÓN 1: UBICACIÓN QUINTA SANTA MARÍA -->
+            <a href="https://google.com" target="_blank" class="boton-invisible btn-ubicacion" title="Ver Ubicación"></a>
 
-        </map>
+            <!-- BOTÓN 2: MESA DE REGALOS LIVERPOOL -->
+            <a href="https://liverpool.com.mx" target="_blank" class="boton-invisible btn-regalos" title="Mesa de Regalos"></a>
+
+            <!-- BOTÓN 3: CONFIRMAR NOVIO -->
+            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novio" title="Confirmar con Novio"></a>
+
+            <!-- BOTÓN 4: CONFIRMAR NOVIA -->
+            <a href="https://wa.me" target="_blank" class="boton-invisible btn-novia" title="Confirmar con Novia"></a>
+
+            <!-- BOTÓN 5: HOSPEDAJE AIRBNB -->
+            <a href="https://airbnb.mx" target="_blank" class="boton-invisible btn-hospedaje" title="Ver Opciones de Hospedaje"></a>
+        </div>
 
     </div>
 
